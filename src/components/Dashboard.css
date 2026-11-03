@@ -1,0 +1,237 @@
+
+/* =====================================
+   NETWORK + ALERTS LAYOUT
+===================================== */
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+.overview-grid > .ant-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.network-card,
+.overview-alerts-card {
+  min-height: 390px;
+}
+
+.network-card .ant-card-body,
+.overview-alerts-card .ant-card-body {
+  height: calc(100% - 57px);
+  padding: 12px 14px;
+}
+
+/* Map fills its card */
+
+.network-visual {
+  display: grid;
+  grid-template-columns: 34% 66%;
+  height: 330px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.network-filter {
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.map-placeholder {
+  min-width: 0;
+  height: 100%;
+}
+
+/* =====================================
+   LIVE ALERTS
+===================================== */
+
+.overview-alerts-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-alerts-card .ant-card-body {
+  flex: 1;
+  overflow: hidden;
+}
+
+.overview-alerts-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.overview-alerts-list .alert-row {
+  display: grid;
+  grid-template-columns: 9px 75px minmax(0, 1fr) 14px;
+  align-items: center;
+  gap: 10px;
+  min-height: 75px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--border-color, #edf0f4);
+}
+
+.overview-alerts-list .alert-row:last-child {
+  border-bottom: none;
+}
+
+.alert-description {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 5px;
+}
+
+.alert-description strong {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.alert-description span {
+  font-size: 11px;
+  color: #8290a5;
+}
+
+.alert-time {
+  font-size: 11px;
+  color: #8290a5;
+  white-space: nowrap;
+}
+
+.alert-arrow {
+  color: #8b9ab0;
+  font-size: 11px;
+}
+
+/* =====================================
+   ACTIVITY CHART FULL WIDTH
+===================================== */
+
+.activity-section {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.activity-card {
+  width: 100%;
+}
+
+.activity-card .ant-card-body {
+  padding: 20px;
+}
+
+.activity-card .chart-area {
+  height: 260px;
+}
+
+.activity-card .line-chart {
+  height: 100%;
+}
+
+.activity-card .chart-summary {
+  margin-bottom: 18px;
+}
+
+/* =====================================
+   BOTTOM SECTION
+===================================== */
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+  align-items: stretch;
+}
+
+.bottom-grid > .ant-card {
+  min-width: 0;
+}
+
+/* Storage */
+
+.storage-row {
+  display: grid;
+  grid-template-columns: 60px 75px minmax(60px, 1fr) 42px;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color, #edf0f4);
+}
+
+.storage-row:last-child {
+  border-bottom: none;
+}
+
+.storage-volume {
+  display: none;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .network-card,
+  .overview-alerts-card {
+    min-height: 350px;
+  }
+
+  .network-visual {
+    height: 290px;
+    grid-template-columns: 38% 62%;
+  }
+
+  .activity-card .chart-area {
+    height: 210px;
+  }
+
+  .storage-row {
+    grid-template-columns: 55px 65px minmax(40px, 1fr) 38px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .network-visual {
+    grid-template-columns: 40% 60%;
+  }
+
+  .overview-alerts-list .alert-row {
+    grid-template-columns: 8px 65px minmax(0, 1fr) 12px;
+    gap: 6px;
+  }
+}

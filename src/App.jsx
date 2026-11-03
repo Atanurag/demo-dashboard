@@ -1,30 +1,63 @@
-import React, { useMemo, useState } from 'react';
-import { ConfigProvider, theme as antdTheme } from 'antd';
-import LeftPanel from './components/LeftPanel.jsx';
-import Dashboard from './components/Dashboard.jsx';
+
+import React, { useState } from 'react';
+
+import LeftPanel from './components/LeftPanel';
+import TopHeader from './components/layout/TopHeader';
+
+import OrgDashboard from './components/Dashboard';
+
+import './styles.css';
 
 export default function App() {
-  const [mode, setMode] = useState('dark');
-  const [activeItem, setActiveItem] = useState('Weighbridge');
-  const isDark = mode === 'dark';
+  const [mode, setMode] = useState('light');
 
-  const themeConfig = useMemo(() => ({
-    algorithm: isDark ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
-    token: {
-      colorPrimary: '#07965b',
-      borderRadius: 10,
-      fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+  const [activePage, setActivePage] = useState('Org Dashboard');
+
+  const handleThemeToggle = () => {
+    setMode(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
+  const renderPage = () => {
+    switch (activePage) {
+      case 'Org Dashboard':
+        return <OrgDashboard />;
+
+      // Add other pages here as we develop them.
+
+      default:
+        return <OrgDashboard />;
     }
-  }), [isDark]);
+  };
 
   return (
-    <ConfigProvider theme={themeConfig}>
-      <div className={`app-shell ${isDark ? 'theme-dark' : 'theme-light'}`}>
-        <LeftPanel onLogout={()=>{}} />
-        <main className="main-screen">
-          <Dashboard activeItem={activeItem} isDark={isDark} />
+    <div className={`app-shell ${mode}`}>
+
+      <LeftPanel
+        mode={mode}
+        activeItem={activePage}
+        onSelect={setActivePage}
+        onToggleTheme={handleThemeToggle}
+      />
+
+      <div className="main-layout">
+
+        <TopHeader
+          pageTitle={activePage}
+          mode={mode}
+          userName="Narayan Murthi"
+          userRole="Admin"
+          onSearch={(value) => console.log('Global search:', value)}
+          onProfile={() => console.log('Profile clicked')}
+          onSettings={() => console.log('Settings clicked')}
+          onLogout={() => console.log('Logout clicked')}
+        />
+
+        <main className="page-content">
+          {renderPage()}
         </main>
+
       </div>
-    </ConfigProvider>
+
+    </div>
   );
 }
