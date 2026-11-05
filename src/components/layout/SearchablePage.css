@@ -1,0 +1,14 @@
+
+.searchable-page {
+  width: 100%;
+  min-width: 0;
+}
+
+/* All matching text across the current page */
+::highlight(global-page-search) {
+  background-color: #ffe58f;
+  color: #7c2d12;
+  text-decoration: underline;
+  text-decoration-color: #f59e0b;
+  text-decoration-thickness: 2px;
+}
