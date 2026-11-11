@@ -1,0 +1,232 @@
+
+/* PAGE */
+.modern-form-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: #f4f6f9;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.modern-form-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px solid #e9edf2;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.form-back-button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 9px;
+  background: #f1f5f9;
+  color: #263445;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.form-back-button:hover {
+  background: #e2e8f0;
+  color: #009b50;
+}
+
+.form-header-content h3 {
+  margin: 0 !important;
+  color: #172033 !important;
+  font-size: 21px !important;
+  font-weight: 700 !important;
+}
+
+.form-header-content .ant-typography-secondary {
+  font-size: 13px;
+}
+
+/* MAIN FORM CARD */
+.modern-form-card {
+  width: 100%;
+  border-radius: 12px !important;
+  border: 1px solid #e9edf2 !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.045);
+}
+
+.modern-form-card .ant-card-body {
+  padding: 28px 32px;
+}
+
+/* FORM SECTIONS */
+.form-section {
+  width: 100%;
+}
+
+.form-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.form-section-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #e8f7ef;
+  color: #009b50;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.form-section-heading h5 {
+  margin: 0 0 4px !important;
+  color: #172033 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.form-section-heading .ant-typography-secondary {
+  font-size: 12px;
+}
+
+/* FORM FIELDS */
+.modern-form-card .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.modern-form-card .ant-form-item-label {
+  padding-bottom: 7px;
+}
+
+.modern-form-card .ant-form-item-label > label {
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+  height: auto;
+}
+
+.modern-form-card .ant-form-item-required::before {
+  color: #ef4444 !important;
+}
+
+.modern-form-card .ant-input,
+.modern-form-card .ant-select-selector {
+  min-height: 42px !important;
+  border-radius: 8px !important;
+  border-color: #dce2e9 !important;
+  font-size: 13px;
+}
+
+.modern-form-card .ant-input {
+  padding: 9px 12px;
+}
+
+.modern-form-card .ant-select-selection-item,
+.modern-form-card .ant-select-selection-placeholder {
+  line-height: 40px !important;
+  font-size: 13px;
+}
+
+.modern-form-card .ant-input:hover,
+.modern-form-card .ant-select-selector:hover {
+  border-color: #009b50 !important;
+}
+
+.modern-form-card .ant-input:focus,
+.modern-form-card .ant-input-focused,
+.modern-form-card .ant-select-focused .ant-select-selector {
+  border-color: #009b50 !important;
+  box-shadow: 0 0 0 2px rgba(0, 155, 80, 0.09) !important;
+}
+
+/* DIVIDERS */
+.modern-form-card .ant-divider {
+  margin: 10px 0 26px;
+  border-color: #edf0f4;
+}
+
+/* ACTION FOOTER */
+.modern-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 22px;
+  margin-top: 12px;
+  border-top: 1px solid #edf0f4;
+}
+
+.modern-form-actions .ant-typography {
+  font-size: 12px;
+}
+
+.form-submit-button {
+  background: #009b50 !important;
+  border-color: #009b50 !important;
+  border-radius: 8px !important;
+  padding: 0 22px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 8px rgba(0, 155, 80, 0.16);
+}
+
+.form-submit-button:hover {
+  background: #008342 !important;
+  border-color: #008342 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .modern-form-page {
+    padding: 12px;
+  }
+
+  .modern-form-header {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .form-header-content h3 {
+    font-size: 18px !important;
+  }
+
+  .modern-form-card .ant-card-body {
+    padding: 20px 16px;
+  }
+
+  .form-section-heading {
+    margin-bottom: 20px;
+  }
+
+  .modern-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modern-form-actions > .ant-space {
+    display: flex;
+    width: 100%;
+  }
+
+  .modern-form-actions .ant-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-form-actions > .ant-space {
+    flex-direction: column;
+  }
+
+  .modern-form-actions .ant-btn {
+    width: 100%;
+  }
+}

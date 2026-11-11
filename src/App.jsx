@@ -8,7 +8,7 @@ import OrgDashboard from './components/Dashboard';
 import StationDashboard from './components/StationDashboard/StationDashboard';
 
 import SearchablePage from './components/layout/SearchablePage';
-
+import AddDevice from  './components/Forms/AddDevice';
 import './styles.css';
 
 export default function App() {
@@ -43,6 +43,9 @@ export default function App() {
             isDark={mode === 'dark'}
           />
         );
+
+      case 'Add Device':
+        return <AddDevice />;
 
       // Add future pages here.
       // case 'Weighbridge':

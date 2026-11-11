@@ -30,6 +30,7 @@ const navItems = [
     icon: <AppstoreOutlined />,
     children: [
       'Station Dashboard',
+      'Add Device',
       'Station List',
       'Station Report',
       'Transaction Report',
