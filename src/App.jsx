@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import LeftPanel from './components/LeftPanel';
 import TopHeader from './components/layout/TopHeader';
-
+import WidgetAdder from "./components/Settings/WidgetAdder";
 import OrgDashboard from './components/Dashboard';
 import StationDashboard from './components/StationDashboard/StationDashboard';
 
@@ -46,6 +46,9 @@ export default function App() {
 
       case 'Add Device':
         return <AddDevice />;
+
+      case 'Widget Adder':
+        return <WidgetAdder />;
 
       // Add future pages here.
       // case 'Weighbridge':

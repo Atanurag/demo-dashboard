@@ -31,6 +31,7 @@ const navItems = [
     children: [
       'Station Dashboard',
       'Add Device',
+      'Widget Adder',
       'Station List',
       'Station Report',
       'Transaction Report',
