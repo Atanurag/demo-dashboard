@@ -11,6 +11,9 @@ import SearchablePage from './components/layout/SearchablePage';
 import AddDevice from  './components/Forms/AddDevice';
 import './styles.css';
 
+
+import { subscribeUser } from './utils/push';
+
 export default function App() {
   const [mode, setMode] = useState('light');
 
@@ -65,6 +68,7 @@ export default function App() {
   return (
     <div className={`app-shell ${mode}`}>
 
+
       <LeftPanel
         mode={mode}
         activeItem={activePage}
@@ -73,6 +77,13 @@ export default function App() {
       />
 
       <div className="main-layout">
+
+<button 
+        onClick={subscribeUser}
+        style={{ padding: '12px 24px', fontSize: '16px', cursor: 'pointer', background: '#4f46e5', color: '#fff', border: 'none', borderRadius: '6px' }}
+      >
+        Enable Push Notifications
+      </button>
 
         {/* COMMON HEADER */}
         <TopHeader
