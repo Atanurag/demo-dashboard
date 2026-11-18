@@ -35,6 +35,8 @@ export async function subscribeUser() {
 // http://127.0.0.1:8000/api/health/
 // https://spotter-weather-routing-be.onrender.com/api/health/
 // http://127.0.0.1:8000/api/save-subscription/
+// https://spotter-weather-routing-be.onrender.com/api/save-subscription/
+// http://127.0.0.1:8000/api/save-subscription/
         const response = await fetch('https://spotter-weather-routing-be.onrender.com/api/save-subscription/', {
             method: 'POST',
             headers: {
@@ -48,7 +50,7 @@ export async function subscribeUser() {
         alert('Successfully subscribed to push notifications!');
     } catch (error) {
         console.error('Failed to subscribe the user: ', error);
-        alert('Subscription failed. console ');
+        alert('Subscription failed. Check console.');
     }
 }
 
